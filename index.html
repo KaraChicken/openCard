@@ -88,8 +88,8 @@
 
         /* 牌區 */
         .game{
-            width: 900px;
-            height: 570px;
+            width: 2000px;
+            height: 480px;
             background-color: #d8bba1;
             position: absolute;
             bottom: 0;
@@ -98,8 +98,6 @@
         }
         /* 卡片部分 */
         /* 圖片名稱：【阿飄 誇丟鬼】 */
-        /* 來源：https://www.facebook.com/media/set/?vanity=off60fans&set=a.10162423472150790&__tn__=%2CO */
-        /* 作者：四小折 */
         .card {
             width: 10rem;
             height: 13rem;
@@ -107,10 +105,9 @@
             box-shadow: 0 0 10px #9f496e00;
             border: 1px solid #9F496E;
             border-radius: 15px;
-            margin: 10px;
             position: relative;
             float: left;
-            margin: 10px;
+            margin: 0.5rem;
             /* 設定子元素在 3D 空間內 */
             transform-style: preserve-3d;
             transition: transform 1s;
@@ -174,7 +171,7 @@
     <script src="./js/loding.js"></script>
     <script>
         // 產生卡片
-        for(let i = 0; i < 8; i++){
+        for(let i = 0; i < 20; i++){
             $('.game').append(`
                 <div class="card card-close">
                     <div class="card-front"></div>
@@ -185,17 +182,17 @@
 
         // 決定每張數字
         $('.card').each(function(index){
-            const number = index % 4 + 1
+            const number = index % 10 + 1
             console.log(index, number)
-            $(this).find('.card-front').css('background-image', `url(./images/${index % 4 + 1}.jpg)`)
+            $(this).find('.card-front').css('background-image', `url(./images/${index % 10 + 1}.jpg)`)
             // data- 是固定的，後面放自訂義名稱
             $(this).attr('data-number', number)
         })
 
         // 打亂
         for(let i = 0; i < 30; i++){
-            const randomA = Math.round(Math.random() * 7)
-            const randomB = Math.round(Math.random() * 7)
+            const randomA = Math.round(Math.random() * 19)
+            const randomB = Math.round(Math.random() * 19)
             // 找到 A 之後，把 A 放在 B 的後面
             // eq() 抓取
             // insertAfter把 (前面的東西) 放在 (後面的東西) 的後面
@@ -231,7 +228,7 @@
                     // 過關判斷
                     if ( $('.card-ok').length === $('.card').length ){
                         Swal.fire({
-                            position: "top-end",
+                            position: "center",
                             icon: "success",
                             title: "恭喜過關",
                             showConfirmButton: false,

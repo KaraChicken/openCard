@@ -7,5 +7,5 @@ function loding() {
   setTimeout(() => {
     content.style = "display: block;";
     pacman.style = "display: none;";
-  } ,3000)
+  } ,1000)
 }
