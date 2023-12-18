@@ -8,6 +8,8 @@
     <style>
         body{
             background-color: #F2EBE5;
+            display: flex;
+            justify-content: center;
         }
         h1{
             position: absolute;
@@ -25,11 +27,11 @@
         }
         /* 遊戲容器 */
         #content{
-            width: 900px;
-            height: 700px;
-            margin: auto;
+            width: 80rem;
+            height: 49rem;
             text-align: center;
             position: relative;
+            transform: translate();
             border-radius: 1rem;
             background-color: #647295;
         }
@@ -88,8 +90,8 @@
 
         /* 牌區 */
         .game{
-            width: 2000px;
-            height: 480px;
+            width: 80rem;
+            height: 43rem;
             background-color: #d8bba1;
             position: absolute;
             bottom: 0;
@@ -148,6 +150,21 @@
             transform: rotateY(180deg);
             backface-visibility: hidden;
         }
+
+        .time {
+            width: 10rem;
+            height: 13rem;
+            border: 1px solid #9f496e00;
+            box-shadow: 0 0 10px #9f496e00;
+            border: 1px solid #9F496E;
+            background-color: #647295;
+            border-radius: 15px;
+            position: absolute;
+            right: 2.57rem;
+            bottom: 1.15rem;
+            display: flex;
+            
+        }
     </style>
 </head>
 <body onload="loding()">
@@ -164,6 +181,7 @@
         <!-- 遊戲畫面 -->
         <div class="game-content">
             <div class="game"></div>
+            <div class="time"></div>
         </div>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
