@@ -199,9 +199,9 @@
 
         // 決定每張數字
         $('.card').each(function(index){
-            const number = index % 10 + 1
+            const number = index % 9 + 1
             console.log(index, number)
-            $(this).find('.card-front').css('background-image', `url(./images/${index % 10 + 1}.jpg)`)
+            $(this).find('.card-front').css('background-image', `url(./images/${index % 9 + 1}.jpg)`)
             // data- 是固定的，後面放自訂義名稱
             $(this).attr('data-number', number)
         })
